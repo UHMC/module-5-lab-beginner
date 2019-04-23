@@ -25,14 +25,13 @@ Cryptography is the backbone of essentially all online financial systems; howeve
     * 2y   // Key expires 2 years from the date of creation
     * Your Name
     * youremail@emailprovider.net
+    * your comment
     * aP455w0rdUW0n14G31
-3. Run the following commands in a terminal or command prompt:
+3. To see your key, run the following commands in a terminal or command prompt:
     * gpg --list-keys
-    * gpg --output yourname.gpg --export youremail@emailprovider.net
-        * Optionally, you can make the output in the form of text so you can publish it somewhere:
-            * gpg --output yourname.gpg --export --armor youremail@emailprovider.net
-4. To print to standard output, we can do:
     * gpg --armor --export youremail@emailprovider.net
+4. To export your key for publishing, either copy (all of) the output from the previous command, or run the following command and then copy all contents of the output file `yourname.gpg`:
+    * gpg --output yourname.gpg --export --armor youremail@emailprovider.net
 5. Share the public key on a public key server like [pgp.mit.edu][pgp-mit].
 6. Import someone else's public key to enable encrypting a message to them.
     * gpg --import theirname.gpg
@@ -46,9 +45,15 @@ Cryptography is the backbone of essentially all online financial systems; howeve
     * check // displays signatures on key
     * save  // should exit; if not, run the command quit
 7. Create a message to send to them.
+    * Use the text editor of your choice to create a message in a file in your working directory, naming it something like `message_for_bob.txt`.
 8. Encrypt the message.
+    * gpg --output message_for_bob.gpg --encrypt --recipient theiremail@emailprovider.net message_for_bob.txt
 9. Give them the encrypted message.
+    * I.e. share the file message_for_bob.gpg that was created.
 10. After receiving an encrypted message, decrypt it.
+    * gpg --output message_for_me.txt --decrypt message_for_me.gpg
+    * Provide the password you created earlier.
+11. You can now view the file message_for_me.txt with the the text editor of your choice.
 
 ## Credits
 Dr. Debasis Bhattacharya  
