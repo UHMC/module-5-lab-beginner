@@ -17,7 +17,7 @@ Cryptography is the backbone of essentially all online financial systems; howeve
 
 ## Assignment Instructions
 1. Install [GNU Privacy Guard][gpg-site].
-    * It is perhaps easiest to install gpg in Linux, but there are versions for Windows and Mac linked from the Download section of [the official site][gpg-site].
+    * It is perhaps easiest to install GPG in Linux, but there are versions for Windows and Mac linked from the Download section of [the official site][gpg-site].
 2. Run the following command in a terminal or command prompt and provide the appropriate details to the program:
     * gpg --full-gen-key
     * 1    // RSA & RSA
